@@ -13,9 +13,7 @@ import (
 var trackingIDMatcher = regexp.MustCompile(`^G-\d+-\d+$`)
 
 func NewClient(trackingID string) (*Client, error) {
-	if !trackingIDMatcher.MatchString(trackingID) {
-		return nil, fmt.Errorf("Invalid Tracking ID: %s", trackingID)
-	}
+
 	return &Client{
 		UseTLS:             true,
 		HttpClient:         http.DefaultClient,
