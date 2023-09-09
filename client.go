@@ -10,7 +10,7 @@ import (
 	"regexp"
 )
 
-var trackingIDMatcher = regexp.MustCompile(`^UA-\d+-\d+$`)
+var trackingIDMatcher = regexp.MustCompile(`^G-\d+-\d+$`)
 
 func NewClient(trackingID string) (*Client, error) {
 	if !trackingIDMatcher.MatchString(trackingID) {
